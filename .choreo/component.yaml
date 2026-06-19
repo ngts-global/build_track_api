@@ -1,0 +1,12 @@
+schemaVersion: "1.2"
+endpoints:
+    - name: BuildTrackAPI
+      displayName: Build Track APIs
+      service:
+        basePath: /build-track
+        port: 8081
+      type: REST
+      networkVisibilities:
+        - Project
+        - Public
+      schemaFilePath: openapi.yaml

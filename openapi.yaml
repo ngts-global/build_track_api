@@ -1,0 +1,3828 @@
+openapi: 3.0.1
+info:
+  title: standard public schema
+  description: ""
+  version: "14.5"
+externalDocs:
+  description: PostgREST Documentation
+  url: https://postgrest.org/en/v14/references/api.html
+servers:
+- url: https://jewjuovjprjbpjejsqql.supabase.co:443/
+paths:
+  /:
+    get:
+      tags:
+      - Introspection
+      summary: OpenAPI description (this document)
+      responses:
+        "200":
+          description: OK
+          content: {}
+  /user_projects_role_map:
+    get:
+      tags:
+      - user_projects_role_map
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: role_id
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user_projects_role_map'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user_projects_role_map'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user_projects_role_map'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user_projects_role_map'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - user_projects_role_map
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: user_projects_role_map
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user_projects_role_map'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/user_projects_role_map'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/user_projects_role_map'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/user_projects_role_map'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: user_projects_role_map
+    delete:
+      tags:
+      - user_projects_role_map
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: role_id
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - user_projects_role_map
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: role_id
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: user_projects_role_map
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user_projects_role_map'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/user_projects_role_map'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/user_projects_role_map'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/user_projects_role_map'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: user_projects_role_map
+  /ex_categories:
+    get:
+      tags:
+      - ex_categories
+      parameters:
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: allocation_percent
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ex_categories'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ex_categories'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ex_categories'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ex_categories'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - ex_categories
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: ex_categories
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ex_categories'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/ex_categories'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/ex_categories'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/ex_categories'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: ex_categories
+    delete:
+      tags:
+      - ex_categories
+      parameters:
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: allocation_percent
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - ex_categories
+      parameters:
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: allocation_percent
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: ex_categories
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ex_categories'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/ex_categories'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/ex_categories'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/ex_categories'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: ex_categories
+  /super_admins:
+    get:
+      tags:
+      - super_admins
+      parameters:
+      - name: firebase_uid
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/super_admins'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/super_admins'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/super_admins'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/super_admins'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - super_admins
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: super_admins
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/super_admins'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/super_admins'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/super_admins'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/super_admins'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: super_admins
+    delete:
+      tags:
+      - super_admins
+      parameters:
+      - name: firebase_uid
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - super_admins
+      parameters:
+      - name: firebase_uid
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: super_admins
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/super_admins'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/super_admins'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/super_admins'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/super_admins'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: super_admins
+  /projects:
+    get:
+      tags:
+      - projects
+      parameters:
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: location
+        in: query
+        schema:
+          type: string
+      - name: start_date
+        in: query
+        schema:
+          type: string
+      - name: total_budget
+        in: query
+        schema:
+          type: string
+      - name: description
+        in: query
+        schema:
+          type: string
+      - name: floors
+        in: query
+        schema:
+          type: string
+      - name: plan_id
+        in: query
+        schema:
+          type: string
+      - name: project_icon_path
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/projects'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/projects'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/projects'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/projects'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - projects
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: projects
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/projects'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/projects'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/projects'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/projects'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: projects
+    delete:
+      tags:
+      - projects
+      parameters:
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: location
+        in: query
+        schema:
+          type: string
+      - name: start_date
+        in: query
+        schema:
+          type: string
+      - name: total_budget
+        in: query
+        schema:
+          type: string
+      - name: description
+        in: query
+        schema:
+          type: string
+      - name: floors
+        in: query
+        schema:
+          type: string
+      - name: plan_id
+        in: query
+        schema:
+          type: string
+      - name: project_icon_path
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - projects
+      parameters:
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: location
+        in: query
+        schema:
+          type: string
+      - name: start_date
+        in: query
+        schema:
+          type: string
+      - name: total_budget
+        in: query
+        schema:
+          type: string
+      - name: description
+        in: query
+        schema:
+          type: string
+      - name: floors
+        in: query
+        schema:
+          type: string
+      - name: plan_id
+        in: query
+        schema:
+          type: string
+      - name: project_icon_path
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: projects
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/projects'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/projects'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/projects'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/projects'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: projects
+  /user_otps:
+    get:
+      tags:
+      - user_otps
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: mobile
+        in: query
+        schema:
+          type: string
+      - name: otp_code
+        in: query
+        schema:
+          type: string
+      - name: is_used
+        in: query
+        schema:
+          type: string
+      - name: expires_at
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user_otps'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user_otps'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user_otps'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user_otps'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - user_otps
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: user_otps
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user_otps'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/user_otps'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/user_otps'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/user_otps'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: user_otps
+    delete:
+      tags:
+      - user_otps
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: mobile
+        in: query
+        schema:
+          type: string
+      - name: otp_code
+        in: query
+        schema:
+          type: string
+      - name: is_used
+        in: query
+        schema:
+          type: string
+      - name: expires_at
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - user_otps
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: mobile
+        in: query
+        schema:
+          type: string
+      - name: otp_code
+        in: query
+        schema:
+          type: string
+      - name: is_used
+        in: query
+        schema:
+          type: string
+      - name: expires_at
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: user_otps
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user_otps'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/user_otps'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/user_otps'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/user_otps'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: user_otps
+  /plans:
+    get:
+      tags:
+      - plans
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: currency
+        in: query
+        schema:
+          type: string
+      - name: price
+        in: query
+        schema:
+          type: string
+      - name: is_active
+        in: query
+        schema:
+          type: string
+      - name: max_organizations
+        in: query
+        schema:
+          type: string
+      - name: features
+        in: query
+        schema:
+          type: string
+      - name: sub_features
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/plans'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/plans'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/plans'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/plans'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - plans
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: plans
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/plans'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/plans'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/plans'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/plans'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: plans
+    delete:
+      tags:
+      - plans
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: currency
+        in: query
+        schema:
+          type: string
+      - name: price
+        in: query
+        schema:
+          type: string
+      - name: is_active
+        in: query
+        schema:
+          type: string
+      - name: max_organizations
+        in: query
+        schema:
+          type: string
+      - name: features
+        in: query
+        schema:
+          type: string
+      - name: sub_features
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - plans
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: currency
+        in: query
+        schema:
+          type: string
+      - name: price
+        in: query
+        schema:
+          type: string
+      - name: is_active
+        in: query
+        schema:
+          type: string
+      - name: max_organizations
+        in: query
+        schema:
+          type: string
+      - name: features
+        in: query
+        schema:
+          type: string
+      - name: sub_features
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: plans
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/plans'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/plans'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/plans'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/plans'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: plans
+  /expenses:
+    get:
+      tags:
+      - expenses
+      parameters:
+      - name: expense_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: sub_category_id
+        in: query
+        schema:
+          type: string
+      - name: date
+        in: query
+        schema:
+          type: string
+      - name: amount
+        in: query
+        schema:
+          type: string
+      - name: description
+        in: query
+        schema:
+          type: string
+      - name: payment_source_id
+        in: query
+        schema:
+          type: string
+      - name: bill_url
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/expenses'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/expenses'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/expenses'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/expenses'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - expenses
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: expenses
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/expenses'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/expenses'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/expenses'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/expenses'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: expenses
+    delete:
+      tags:
+      - expenses
+      parameters:
+      - name: expense_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: sub_category_id
+        in: query
+        schema:
+          type: string
+      - name: date
+        in: query
+        schema:
+          type: string
+      - name: amount
+        in: query
+        schema:
+          type: string
+      - name: description
+        in: query
+        schema:
+          type: string
+      - name: payment_source_id
+        in: query
+        schema:
+          type: string
+      - name: bill_url
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - expenses
+      parameters:
+      - name: expense_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: sub_category_id
+        in: query
+        schema:
+          type: string
+      - name: date
+        in: query
+        schema:
+          type: string
+      - name: amount
+        in: query
+        schema:
+          type: string
+      - name: description
+        in: query
+        schema:
+          type: string
+      - name: payment_source_id
+        in: query
+        schema:
+          type: string
+      - name: bill_url
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: expenses
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/expenses'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/expenses'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/expenses'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/expenses'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: expenses
+  /users:
+    get:
+      tags:
+      - users
+      parameters:
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: mobile
+        in: query
+        schema:
+          type: string
+      - name: email
+        in: query
+        schema:
+          type: string
+      - name: address
+        in: query
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          type: string
+      - name: role_id
+        in: query
+        schema:
+          type: string
+      - name: firebase_uid
+        in: query
+        schema:
+          type: string
+      - name: is_profile_completed
+        in: query
+        schema:
+          type: string
+      - name: token
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/users'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/users'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/users'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/users'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - users
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: users
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/users'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/users'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/users'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/users'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: users
+    delete:
+      tags:
+      - users
+      parameters:
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: mobile
+        in: query
+        schema:
+          type: string
+      - name: email
+        in: query
+        schema:
+          type: string
+      - name: address
+        in: query
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          type: string
+      - name: role_id
+        in: query
+        schema:
+          type: string
+      - name: firebase_uid
+        in: query
+        schema:
+          type: string
+      - name: is_profile_completed
+        in: query
+        schema:
+          type: string
+      - name: token
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - users
+      parameters:
+      - name: user_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: mobile
+        in: query
+        schema:
+          type: string
+      - name: email
+        in: query
+        schema:
+          type: string
+      - name: address
+        in: query
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          type: string
+      - name: role_id
+        in: query
+        schema:
+          type: string
+      - name: firebase_uid
+        in: query
+        schema:
+          type: string
+      - name: is_profile_completed
+        in: query
+        schema:
+          type: string
+      - name: token
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: users
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/users'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/users'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/users'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/users'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: users
+  /ex_subcategories:
+    get:
+      tags:
+      - ex_subcategories
+      parameters:
+      - name: subcategory_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: allocation_percent
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ex_subcategories'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ex_subcategories'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ex_subcategories'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ex_subcategories'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - ex_subcategories
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: ex_subcategories
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ex_subcategories'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/ex_subcategories'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/ex_subcategories'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/ex_subcategories'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: ex_subcategories
+    delete:
+      tags:
+      - ex_subcategories
+      parameters:
+      - name: subcategory_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: allocation_percent
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - ex_subcategories
+      parameters:
+      - name: subcategory_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: allocation_percent
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: ex_subcategories
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ex_subcategories'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/ex_subcategories'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/ex_subcategories'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/ex_subcategories'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: ex_subcategories
+  /roles:
+    get:
+      tags:
+      - roles
+      parameters:
+      - name: role_name
+        in: query
+        schema:
+          type: string
+      - name: menus
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/roles'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/roles'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/roles'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/roles'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - roles
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: roles
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/roles'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/roles'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/roles'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/roles'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: roles
+    delete:
+      tags:
+      - roles
+      parameters:
+      - name: role_name
+        in: query
+        schema:
+          type: string
+      - name: menus
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - roles
+      parameters:
+      - name: role_name
+        in: query
+        schema:
+          type: string
+      - name: menus
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: roles
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/roles'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/roles'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/roles'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/roles'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: roles
+  /budgets:
+    get:
+      tags:
+      - budgets
+      parameters:
+      - name: budget_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: allocated_amount
+        in: query
+        schema:
+          type: string
+      - name: spent_amount
+        in: query
+        schema:
+          type: string
+      - name: notes
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordering
+        schema:
+          type: string
+      - name: Range
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Range-Unit
+        in: header
+        description: Limiting and Pagination
+        schema:
+          type: string
+          default: items
+      - name: offset
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limiting and Pagination
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - count=none
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/budgets'
+            application/vnd.pgrst.object+json;nulls=stripped:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/budgets'
+            application/vnd.pgrst.object+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/budgets'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/budgets'
+        "206":
+          description: Partial Content
+          content: {}
+    post:
+      tags:
+      - budgets
+      parameters:
+      - name: select
+        in: query
+        description: Filtering Columns
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+          - resolution=ignore-duplicates
+          - resolution=merge-duplicates
+      requestBody:
+        description: budgets
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/budgets'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/budgets'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/budgets'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/budgets'
+        required: false
+      responses:
+        "201":
+          description: Created
+          content: {}
+      x-codegen-request-body-name: budgets
+    delete:
+      tags:
+      - budgets
+      parameters:
+      - name: budget_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: allocated_amount
+        in: query
+        schema:
+          type: string
+      - name: spent_amount
+        in: query
+        schema:
+          type: string
+      - name: notes
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      responses:
+        "204":
+          description: No Content
+          content: {}
+    patch:
+      tags:
+      - budgets
+      parameters:
+      - name: budget_id
+        in: query
+        schema:
+          type: string
+      - name: project_id
+        in: query
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        schema:
+          type: string
+      - name: allocated_amount
+        in: query
+        schema:
+          type: string
+      - name: spent_amount
+        in: query
+        schema:
+          type: string
+      - name: notes
+        in: query
+        schema:
+          type: string
+      - name: created_at
+        in: query
+        schema:
+          type: string
+      - name: updated_at
+        in: query
+        schema:
+          type: string
+      - name: Prefer
+        in: header
+        description: Preference
+        schema:
+          type: string
+          enum:
+          - return=representation
+          - return=minimal
+          - return=none
+      requestBody:
+        description: budgets
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/budgets'
+          application/vnd.pgrst.object+json;nulls=stripped:
+            schema:
+              $ref: '#/components/schemas/budgets'
+          application/vnd.pgrst.object+json:
+            schema:
+              $ref: '#/components/schemas/budgets'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/budgets'
+        required: false
+      responses:
+        "204":
+          description: No Content
+          content: {}
+      x-codegen-request-body-name: budgets
+components:
+  schemas:
+    user_projects_role_map:
+      required:
+      - id
+      - project_id
+      - role_id
+      - user_id
+      type: object
+      properties:
+        id:
+          type: integer
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: integer
+        user_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `users.mobile`.<fk table='users' column='mobile'/>
+          format: text
+        project_id:
+          type: integer
+          description: |-
+            Note:
+            This is a Foreign Key to `projects.project_id`.<fk table='projects' column='project_id'/>
+          format: integer
+        role_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `roles.role_name`.<fk table='roles' column='role_name'/>
+          format: text
+    ex_categories:
+      required:
+      - category_id
+      - created_at
+      - name
+      type: object
+      properties:
+        category_id:
+          type: string
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: text
+        name:
+          type: string
+          format: text
+        allocation_percent:
+          type: number
+          format: numeric
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+    super_admins:
+      required:
+      - created_at
+      - firebase_uid
+      type: object
+      properties:
+        firebase_uid:
+          type: string
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: text
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+    projects:
+      required:
+      - created_at
+      - name
+      - project_id
+      - total_budget
+      - updated_at
+      - user_id
+      type: object
+      properties:
+        project_id:
+          type: integer
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: integer
+        user_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `users.mobile`.<fk table='users' column='mobile'/>
+          format: text
+        name:
+          type: string
+          format: text
+        location:
+          type: string
+          format: text
+        start_date:
+          type: string
+          format: date
+        total_budget:
+          type: number
+          format: numeric
+        description:
+          type: string
+          format: text
+        floors:
+          type: integer
+          format: integer
+        plan_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `plans.id`.<fk table='plans' column='id'/>
+          format: text
+        project_icon_path:
+          type: string
+          format: text
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+        updated_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+    user_otps:
+      required:
+      - expires_at
+      - id
+      - mobile
+      - otp_code
+      type: object
+      properties:
+        id:
+          type: integer
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: bigint
+        user_id:
+          type: integer
+          format: bigint
+        mobile:
+          type: string
+          format: text
+        otp_code:
+          type: string
+          format: text
+        is_used:
+          type: boolean
+          format: boolean
+          default: false
+        expires_at:
+          type: string
+          format: timestamp without time zone
+        created_at:
+          type: string
+          format: timestamp without time zone
+          default: now()
+    plans:
+      required:
+      - created_at
+      - currency
+      - id
+      - is_active
+      - max_organizations
+      - name
+      - price
+      - updated_at
+      type: object
+      properties:
+        id:
+          type: string
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: text
+        name:
+          type: string
+          format: text
+        currency:
+          type: string
+          format: text
+          default: INR
+        price:
+          type: number
+          format: numeric
+        is_active:
+          type: boolean
+          format: boolean
+          default: true
+        max_organizations:
+          type: integer
+          format: integer
+        features:
+          type: object
+          format: jsonb
+        sub_features:
+          type: object
+          format: jsonb
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+        updated_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+    expenses:
+      required:
+      - amount
+      - created_at
+      - date
+      - expense_id
+      - project_id
+      - updated_at
+      type: object
+      properties:
+        expense_id:
+          type: integer
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: integer
+        project_id:
+          type: integer
+          description: |-
+            Note:
+            This is a Foreign Key to `projects.project_id`.<fk table='projects' column='project_id'/>
+          format: integer
+        category_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `ex_categories.category_id`.<fk table='ex_categories' column='category_id'/>
+          format: text
+        sub_category_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `ex_subcategories.subcategory_id`.<fk table='ex_subcategories' column='subcategory_id'/>
+          format: text
+        date:
+          type: string
+          format: date
+        amount:
+          type: number
+          format: numeric
+        description:
+          type: string
+          format: text
+        payment_source_id:
+          type: integer
+          format: integer
+        bill_url:
+          type: string
+          format: text
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+        updated_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+    users:
+      required:
+      - created_at
+      - email
+      - is_profile_completed
+      - mobile
+      - name
+      - status
+      - updated_at
+      - user_id
+      type: object
+      properties:
+        user_id:
+          type: integer
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: integer
+        name:
+          type: string
+          format: text
+        mobile:
+          type: string
+          format: text
+        email:
+          type: string
+          format: text
+        address:
+          type: string
+          format: text
+        password:
+          type: string
+          format: text
+        status:
+          type: string
+          format: text
+          default: ACTIVE
+        role_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `roles.role_name`.<fk table='roles' column='role_name'/>
+          format: text
+        firebase_uid:
+          type: string
+          format: text
+        is_profile_completed:
+          type: boolean
+          format: boolean
+          default: false
+        token:
+          type: string
+          format: text
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+        updated_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+    ex_subcategories:
+      required:
+      - category_id
+      - created_at
+      - name
+      - subcategory_id
+      type: object
+      properties:
+        subcategory_id:
+          type: string
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: text
+        category_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `ex_categories.category_id`.<fk table='ex_categories' column='category_id'/>
+          format: text
+        name:
+          type: string
+          format: text
+        allocation_percent:
+          type: number
+          format: numeric
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+    roles:
+      required:
+      - created_at
+      - role_name
+      type: object
+      properties:
+        role_name:
+          type: string
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: text
+        menus:
+          type: object
+          format: jsonb
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+    budgets:
+      required:
+      - allocated_amount
+      - budget_id
+      - created_at
+      - project_id
+      - spent_amount
+      - updated_at
+      type: object
+      properties:
+        budget_id:
+          type: integer
+          description: |-
+            Note:
+            This is a Primary Key.<pk/>
+          format: integer
+        project_id:
+          type: integer
+          description: |-
+            Note:
+            This is a Foreign Key to `projects.project_id`.<fk table='projects' column='project_id'/>
+          format: integer
+        category_id:
+          type: string
+          description: |-
+            Note:
+            This is a Foreign Key to `ex_categories.category_id`.<fk table='ex_categories' column='category_id'/>
+          format: text
+        allocated_amount:
+          type: number
+          format: numeric
+        spent_amount:
+          type: number
+          format: numeric
+        notes:
+          type: string
+          format: text
+        created_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+        updated_at:
+          type: string
+          format: timestamp with time zone
+          default: now()
+  parameters:
+    preferParams:
+      name: Prefer
+      in: header
+      description: Preference
+      schema:
+        type: string
+    preferReturn:
+      name: Prefer
+      in: header
+      description: Preference
+      schema:
+        type: string
+        enum:
+        - return=representation
+        - return=minimal
+        - return=none
+    preferCount:
+      name: Prefer
+      in: header
+      description: Preference
+      schema:
+        type: string
+        enum:
+        - count=none
+    preferPost:
+      name: Prefer
+      in: header
+      description: Preference
+      schema:
+        type: string
+        enum:
+        - return=representation
+        - return=minimal
+        - return=none
+        - resolution=ignore-duplicates
+        - resolution=merge-duplicates
+    select:
+      name: select
+      in: query
+      description: Filtering Columns
+      schema:
+        type: string
+    on_conflict:
+      name: on_conflict
+      in: query
+      description: On Conflict
+      schema:
+        type: string
+    order:
+      name: order
+      in: query
+      description: Ordering
+      schema:
+        type: string
+    range:
+      name: Range
+      in: header
+      description: Limiting and Pagination
+      schema:
+        type: string
+    rangeUnit:
+      name: Range-Unit
+      in: header
+      description: Limiting and Pagination
+      schema:
+        type: string
+        default: items
+    offset:
+      name: offset
+      in: query
+      description: Limiting and Pagination
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      description: Limiting and Pagination
+      schema:
+        type: string
+    rowFilter.user_projects_role_map.id:
+      name: id
+      in: query
+      schema:
+        type: string
+    rowFilter.user_projects_role_map.user_id:
+      name: user_id
+      in: query
+      schema:
+        type: string
+    rowFilter.user_projects_role_map.project_id:
+      name: project_id
+      in: query
+      schema:
+        type: string
+    rowFilter.user_projects_role_map.role_id:
+      name: role_id
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_categories.category_id:
+      name: category_id
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_categories.name:
+      name: name
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_categories.allocation_percent:
+      name: allocation_percent
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_categories.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.super_admins.firebase_uid:
+      name: firebase_uid
+      in: query
+      schema:
+        type: string
+    rowFilter.super_admins.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.project_id:
+      name: project_id
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.user_id:
+      name: user_id
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.name:
+      name: name
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.location:
+      name: location
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.start_date:
+      name: start_date
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.total_budget:
+      name: total_budget
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.description:
+      name: description
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.floors:
+      name: floors
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.plan_id:
+      name: plan_id
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.project_icon_path:
+      name: project_icon_path
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.projects.updated_at:
+      name: updated_at
+      in: query
+      schema:
+        type: string
+    rowFilter.user_otps.id:
+      name: id
+      in: query
+      schema:
+        type: string
+    rowFilter.user_otps.user_id:
+      name: user_id
+      in: query
+      schema:
+        type: string
+    rowFilter.user_otps.mobile:
+      name: mobile
+      in: query
+      schema:
+        type: string
+    rowFilter.user_otps.otp_code:
+      name: otp_code
+      in: query
+      schema:
+        type: string
+    rowFilter.user_otps.is_used:
+      name: is_used
+      in: query
+      schema:
+        type: string
+    rowFilter.user_otps.expires_at:
+      name: expires_at
+      in: query
+      schema:
+        type: string
+    rowFilter.user_otps.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.id:
+      name: id
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.name:
+      name: name
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.currency:
+      name: currency
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.price:
+      name: price
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.is_active:
+      name: is_active
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.max_organizations:
+      name: max_organizations
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.features:
+      name: features
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.sub_features:
+      name: sub_features
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.plans.updated_at:
+      name: updated_at
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.expense_id:
+      name: expense_id
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.project_id:
+      name: project_id
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.category_id:
+      name: category_id
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.sub_category_id:
+      name: sub_category_id
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.date:
+      name: date
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.amount:
+      name: amount
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.description:
+      name: description
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.payment_source_id:
+      name: payment_source_id
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.bill_url:
+      name: bill_url
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.expenses.updated_at:
+      name: updated_at
+      in: query
+      schema:
+        type: string
+    rowFilter.users.user_id:
+      name: user_id
+      in: query
+      schema:
+        type: string
+    rowFilter.users.name:
+      name: name
+      in: query
+      schema:
+        type: string
+    rowFilter.users.mobile:
+      name: mobile
+      in: query
+      schema:
+        type: string
+    rowFilter.users.email:
+      name: email
+      in: query
+      schema:
+        type: string
+    rowFilter.users.address:
+      name: address
+      in: query
+      schema:
+        type: string
+    rowFilter.users.password:
+      name: password
+      in: query
+      schema:
+        type: string
+    rowFilter.users.status:
+      name: status
+      in: query
+      schema:
+        type: string
+    rowFilter.users.role_id:
+      name: role_id
+      in: query
+      schema:
+        type: string
+    rowFilter.users.firebase_uid:
+      name: firebase_uid
+      in: query
+      schema:
+        type: string
+    rowFilter.users.is_profile_completed:
+      name: is_profile_completed
+      in: query
+      schema:
+        type: string
+    rowFilter.users.token:
+      name: token
+      in: query
+      schema:
+        type: string
+    rowFilter.users.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.users.updated_at:
+      name: updated_at
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_subcategories.subcategory_id:
+      name: subcategory_id
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_subcategories.category_id:
+      name: category_id
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_subcategories.name:
+      name: name
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_subcategories.allocation_percent:
+      name: allocation_percent
+      in: query
+      schema:
+        type: string
+    rowFilter.ex_subcategories.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.roles.role_name:
+      name: role_name
+      in: query
+      schema:
+        type: string
+    rowFilter.roles.menus:
+      name: menus
+      in: query
+      schema:
+        type: string
+    rowFilter.roles.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.budgets.budget_id:
+      name: budget_id
+      in: query
+      schema:
+        type: string
+    rowFilter.budgets.project_id:
+      name: project_id
+      in: query
+      schema:
+        type: string
+    rowFilter.budgets.category_id:
+      name: category_id
+      in: query
+      schema:
+        type: string
+    rowFilter.budgets.allocated_amount:
+      name: allocated_amount
+      in: query
+      schema:
+        type: string
+    rowFilter.budgets.spent_amount:
+      name: spent_amount
+      in: query
+      schema:
+        type: string
+    rowFilter.budgets.notes:
+      name: notes
+      in: query
+      schema:
+        type: string
+    rowFilter.budgets.created_at:
+      name: created_at
+      in: query
+      schema:
+        type: string
+    rowFilter.budgets.updated_at:
+      name: updated_at
+      in: query
+      schema:
+        type: string
+  requestBodies:
+    body.user_projects_role_map:
+      description: user_projects_role_map
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/user_projects_role_map'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/user_projects_role_map'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/user_projects_role_map'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/user_projects_role_map'
+      required: false
+    body.ex_categories:
+      description: ex_categories
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ex_categories'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/ex_categories'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/ex_categories'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/ex_categories'
+      required: false
+    body.super_admins:
+      description: super_admins
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/super_admins'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/super_admins'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/super_admins'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/super_admins'
+      required: false
+    body.projects:
+      description: projects
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/projects'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/projects'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/projects'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/projects'
+      required: false
+    body.user_otps:
+      description: user_otps
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/user_otps'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/user_otps'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/user_otps'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/user_otps'
+      required: false
+    body.plans:
+      description: plans
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/plans'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/plans'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/plans'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/plans'
+      required: false
+    body.expenses:
+      description: expenses
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/expenses'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/expenses'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/expenses'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/expenses'
+      required: false
+    body.users:
+      description: users
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/users'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/users'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/users'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/users'
+      required: false
+    body.ex_subcategories:
+      description: ex_subcategories
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ex_subcategories'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/ex_subcategories'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/ex_subcategories'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/ex_subcategories'
+      required: false
+    body.roles:
+      description: roles
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/roles'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/roles'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/roles'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/roles'
+      required: false
+    body.budgets:
+      description: budgets
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/budgets'
+        application/vnd.pgrst.object+json;nulls=stripped:
+          schema:
+            $ref: '#/components/schemas/budgets'
+        application/vnd.pgrst.object+json:
+          schema:
+            $ref: '#/components/schemas/budgets'
+        text/csv:
+          schema:
+            $ref: '#/components/schemas/budgets'
+      required: false
+x-original-swagger-version: "2.0"
