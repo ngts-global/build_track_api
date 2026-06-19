@@ -1,28 +1,36 @@
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm ci
 
-COPY . .
-
-# Create a new user with UID 10014
-RUN addgroup -g 10014 choreo && \
-    adduser --disabled-password --no-create-home --uid 10014 --ingroup choreo choreouser
+COPY nest-cli.json ./
+COPY tsconfig*.json ./
+COPY src ./src
+COPY openapi.yaml ./
 
 RUN npm run build
 
-FROM node:20-alpine
+RUN npm prune --omit=dev
 
-WORKDIR /app
+FROM node:22-alpine
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/dist ./dist
+WORKDIR /usr/src/app
 
+ENV NODE_ENV=production
 ENV PORT=8081
+
+COPY --from=builder /usr/src/app/node_modules ./node_modules
+COPY --from=builder /usr/src/app/package*.json ./
+COPY --from=builder /usr/src/app/dist ./dist
+COPY --from=builder /usr/src/app/openapi.yaml ./
+
+RUN addgroup -g 10014 choreo && \
+    adduser --disabled-password --no-create-home --uid 10014 --ingroup choreo choreouser
+
+USER 10014
 EXPOSE 8081
 
-CMD ["npm", "run", "start:prod"]
+CMD ["node", "dist/main.js"]
