@@ -18,6 +18,19 @@ paths:
         "200":
           description: OK
           content: {}
+  /health:
+    get:
+      tags:
+      - Health
+      summary: Health check
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: hello world
   /user_projects_role_map:
     get:
       tags:
