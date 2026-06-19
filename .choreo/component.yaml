@@ -1,6 +1,6 @@
 schemaVersion: "1.2"
 endpoints:
-    - name: BuildTrackAPI
+    - name: buildtrack-api
       displayName: Build Track APIs
       service:
         basePath: /build-track
