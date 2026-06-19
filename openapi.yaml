@@ -7,7 +7,7 @@ externalDocs:
   description: PostgREST Documentation
   url: https://postgrest.org/en/v14/references/api.html
 servers:
-- url: https://jewjuovjprjbpjejsqql.supabase.co:443/
+- url: /buildtrackapi
 paths:
   /:
     get:

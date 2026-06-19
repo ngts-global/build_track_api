@@ -3,7 +3,7 @@ endpoints:
     - name: buildtrack-api
       displayName: Build Track APIs
       service:
-        basePath: /build-track
+        basePath: /buildtrackapi
         port: 8081
       type: REST
       networkVisibilities:
