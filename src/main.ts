@@ -13,6 +13,8 @@ async function bootstrap() {
     logger: WinstonModule.createLogger(winstonConfig),
   });
 
+  app.setGlobalPrefix(CHOREO_CONTEXT_PATH);
+
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
     transform: true,
