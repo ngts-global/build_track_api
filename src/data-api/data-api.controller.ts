@@ -82,7 +82,11 @@ export class DataApiController {
     body: unknown,
     headers: Record<string, string | string[] | undefined>,
   ): Promise<void> {
-    const table = request.path.replace(/^\/+/, '');
+    // Strip leading slashes and any global prefix (e.g. buildtrackapi/)
+    const table = request.path
+      .replace(/^\/+/, '')
+      .replace(/^buildtrackapi\//, '');
+      
     const result = await this.dataApiService.forward(method, table, {
       queryParams,
       body,
