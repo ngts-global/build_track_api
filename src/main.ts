@@ -15,6 +15,12 @@ async function bootstrap() {
 
   app.setGlobalPrefix(CHOREO_CONTEXT_PATH);
 
+  app.enableCors({
+    origin: '*', // You can restrict this to your frontend domain in production
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
+
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
     transform: true,
